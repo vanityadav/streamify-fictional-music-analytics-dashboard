@@ -36,3 +36,19 @@ npm run start
 | components   | Bla bla                             |
 | ui           | UI components                       |
 | utils        | utils                               |
+
+### Requirements
+
+    -  Fast, Static, Modern and responsive web app
+    -  Clean and modular Code
+    -  Mocked dummy data
+    -  Tables and chats with sorting and filtering
+    -  Metrics info
+
+### Process
+
+    - Using Next.js for fast and modern web app
+    - Mocked data in json
+    - Ag grid for tables and filters
+    - shadcn/ui components for modern look and feel
+    - Partial Pre-rendering and Server Side rendering for fast page loads

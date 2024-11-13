@@ -1,0 +1,534 @@
+[
+  {
+    "name": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "date_streamed": "2024-11-14",
+    "stream_count": 5000000,
+    "user_id": "1"
+  },
+  {
+    "name": "Imagine",
+    "artist": "John Lennon",
+    "date_streamed": "1971-10-11",
+    "stream_count": 4500000,
+    "user_id": "2"
+  },
+  {
+    "name": "Thriller",
+    "artist": "Michael Jackson",
+    "date_streamed": "1982-11-30",
+    "stream_count": 4000000,
+    "user_id": "3"
+  },
+  {
+    "name": "Hotel California",
+    "artist": "Eagles",
+    "date_streamed": "1976-12-08",
+    "stream_count": 3500000,
+    "user_id": "4"
+  },
+  {
+    "name": "Stairway to Heaven",
+    "artist": "Led Zeppelin",
+    "date_streamed": "1971-11-08",
+    "stream_count": 3000000,
+    "user_id": "5"
+  },
+  {
+    "name": "Hey Jude",
+    "artist": "The Beatles",
+    "date_streamed": "1968-08-26",
+    "stream_count": 2500000,
+    "user_id": "6"
+  },
+  {
+    "name": "Smells Like Teen Spirit",
+    "artist": "Nirvana",
+    "date_streamed": "1991-09-10",
+    "stream_count": 2000000,
+    "user_id": "7"
+  },
+  {
+    "name": "Sweet Child o' Mine",
+    "artist": "Guns N' Roses",
+    "date_streamed": "1987-08-17",
+    "stream_count": 1500000,
+    "user_id": "8"
+  },
+  {
+    "name": "Like a Rolling Stone",
+    "artist": "Bob Dylan",
+    "date_streamed": "1965-07-20",
+    "stream_count": 1000000,
+    "user_id": "9"
+  },
+  {
+    "name": "Billie Jean",
+    "artist": "Michael Jackson",
+    "date_streamed": "1982-01-02",
+    "stream_count": 500000,
+    "user_id": "3"
+  },
+  {
+    "name": "Wonderwall",
+    "artist": "Oasis",
+    "date_streamed": "1995-10-30",
+    "stream_count": 450000,
+    "user_id": "10"
+  },
+  {
+    "name": "Back in Black",
+    "artist": "AC/DC",
+    "date_streamed": "1980-07-21",
+    "stream_count": 400000,
+    "user_id": "11"
+  },
+  {
+    "name": "Purple Haze",
+    "artist": "Jimi Hendrix",
+    "date_streamed": "1967-03-17",
+    "stream_count": 350000,
+    "user_id": "12"
+  },
+  {
+    "name": "Born to Run",
+    "artist": "Bruce Springsteen",
+    "date_streamed": "1975-08-25",
+    "stream_count": 300000,
+    "user_id": "13"
+  },
+  {
+    "name": "Superstition",
+    "artist": "Stevie Wonder",
+    "date_streamed": "1972-10-24",
+    "stream_count": 250000,
+    "user_id": "14"
+  },
+  {
+    "name": "Satisfaction",
+    "artist": "The Rolling Stones",
+    "date_streamed": "1965-06-06",
+    "stream_count": 200000,
+    "user_id": "15"
+  },
+  {
+    "name": "Imagine (Remastered)",
+    "artist": "John Lennon",
+    "date_streamed": "1971-10-11",
+    "stream_count": 150000,
+    "user_id": "2"
+  },
+  {
+    "name": "Hey Jude (Remastered)",
+    "artist": "The Beatles",
+    "date_streamed": "1968-08-26",
+    "stream_count": 100000,
+    "user_id": "6"
+  },
+  {
+    "name": "Billie Jean (Remastered)",
+    "artist": "Michael Jackson",
+    "date_streamed": "1982-01-02",
+    "stream_count": 50000,
+    "user_id": "3"
+  },
+  {
+    "name": "Smells Like Teen Spirit (Remastered)",
+    "artist": "Nirvana",
+    "date_streamed": "1991-09-10",
+    "stream_count": 45000,
+    "user_id": "7"
+  },
+  {
+    "name": "Bohemian Rhapsody (Remastered)",
+    "artist": "Queen",
+    "date_streamed": "1975-10-31",
+    "stream_count": 40000,
+    "user_id": "1"
+  },
+  {
+    "name": "Sweet Child o' Mine (Remastered)",
+    "artist": "Guns N' Roses",
+    "date_streamed": "1987-08-17",
+    "stream_count": 35000,
+    "user_id": "8"
+  },
+  {
+    "name": "Wonderwall (Remastered)",
+    "artist": "Oasis",
+    "date_streamed": "1995-10-30",
+    "stream_count": 30000,
+    "user_id": "10"
+  },
+  {
+    "name": "Back in Black (Remastered)",
+    "artist": "AC/DC",
+    "date_streamed": "1980-07-21",
+    "stream_count": 25000,
+    "user_id": "11"
+  },
+  {
+    "name": "Purple Haze (Remastered)",
+    "artist": "Jimi Hendrix",
+    "date_streamed": "1967-03-17",
+    "stream_count": 20000,
+    "user_id": "12"
+  },
+  {
+    "name": "Born to Run (Remastered)",
+    "artist": "Bruce Springsteen",
+    "date_streamed": "1975-08-25",
+    "stream_count": 15000,
+    "user_id": "13"
+  },
+  {
+    "name": "Superstition (Remastered)",
+    "artist": "Stevie Wonder",
+    "date_streamed": "1972-10-24",
+    "stream_count": 10000,
+    "user_id": "14"
+  },
+  {
+    "name": "Satisfaction (Remastered)",
+    "artist": "The Rolling Stones",
+    "date_streamed": "1965-06-06",
+    "stream_count": 5000,
+    "user_id": "15"
+  },
+  {
+    "name": "Imagine (Live)",
+    "artist": "John Lennon",
+    "date_streamed": "1972-11-15",
+    "stream_count": 4500,
+    "user_id": "2"
+  },
+  {
+    "name": "Hey Jude (Live)",
+    "artist": "The Beatles",
+    "date_streamed": "1968-09-16",
+    "stream_count": 4000,
+    "user_id": "6"
+  },
+  {
+    "name": "Billie Jean (Live)",
+    "artist": "Michael Jackson",
+    "date_streamed": "1982-03-25",
+    "stream_count": 3500,
+    "user_id": "3"
+  },
+  {
+    "name": "Smells Like Teen Spirit (Live)",
+    "artist": "Nirvana",
+    "date_streamed": "1992-10-31",
+    "stream_count": 3000,
+    "user_id": "7"
+  },
+  {
+    "name": "Bohemian Rhapsody (Live)",
+    "artist": "Queen",
+    "date_streamed": "1975-11-24",
+    "stream_count": 2500,
+    "user_id": "1"
+  },
+  {
+    "name": "Sweet Child o' Mine (Live)",
+    "artist": "Guns N' Roses",
+    "date_streamed": "1988-07-02",
+    "stream_count": 2000,
+    "user_id": "8"
+  },
+  {
+    "name": "Wonderwall (Live)",
+    "artist": "Oasis",
+    "date_streamed": "1996-08-10",
+    "stream_count": 1500,
+    "user_id": "10"
+  },
+  {
+    "name": "Back in Black (Live)",
+    "artist": "AC/DC",
+    "date_streamed": "1981-07-05",
+    "stream_count": 1000,
+    "user_id": "11"
+  },
+  {
+    "name": "Purple Haze (Live)",
+    "artist": "Jimi Hendrix",
+    "date_streamed": "1969-08-18",
+    "stream_count": 500,
+    "user_id": "12"
+  },
+  {
+    "name": "Born to Run (Live)",
+    "artist": "Bruce Springsteen",
+    "date_streamed": "1975-09-08",
+    "stream_count": 400,
+    "user_id": "13"
+  },
+  {
+    "name": "Superstition (Live)",
+    "artist": "Stevie Wonder",
+    "date_streamed": "1974-08-28",
+    "stream_count": 300,
+    "user_id": "14"
+  },
+  {
+    "name": "Satisfaction (Live)",
+    "artist": "The Rolling Stones",
+    "date_streamed": "1965-11-12",
+    "stream_count": 200,
+    "user_id": "15"
+  },
+  {
+    "name": "Imagine (Acoustic)",
+    "artist": "John Lennon",
+    "date_streamed": "1970-12-11",
+    "stream_count": 150,
+    "user_id": "2"
+  },
+  {
+    "name": "Hey Jude (Acoustic)",
+    "artist": "The Beatles",
+    "date_streamed": "1968-11-29",
+    "stream_count": 100,
+    "user_id": "6"
+  },
+  {
+    "name": "Billie Jean (Acoustic)",
+    "artist": "Michael Jackson",
+    "date_streamed": "1982-11-30",
+    "stream_count": 50000,
+    "user_id": "3"
+  },
+  {
+    "name": "Smells Like Teen Spirit (Acoustic)",
+    "artist": "Nirvana",
+    "date_streamed": "1993-11-18",
+    "stream_count": 45000,
+    "user_id": "7"
+  },
+  {
+    "name": "Bohemian Rhapsody (Acoustic)",
+    "artist": "Queen",
+    "date_streamed": "1975-10-31",
+    "stream_count": 40000,
+    "user_id": "1"
+  },
+  {
+    "name": "Sweet Child o' Mine (Acoustic)",
+    "artist": "Guns N' Roses",
+    "date_streamed": "1987-08-17",
+    "stream_count": 35000,
+    "user_id": "8"
+  },
+  {
+    "name": "Wonderwall (Acoustic)",
+    "artist": "Oasis",
+    "date_streamed": "1995-10-30",
+    "stream_count": 30000,
+    "user_id": "10"
+  },
+  {
+    "name": "Back in Black (Acoustic)",
+    "artist": "AC/DC",
+    "date_streamed": "1980-07-21",
+    "stream_count": 25000,
+    "user_id": "11"
+  },
+  {
+    "name": "Purple Haze (Acoustic)",
+    "artist": "Jimi Hendrix",
+    "date_streamed": "1967-03-17",
+    "stream_count": 20000,
+    "user_id": "12"
+  },
+  {
+    "name": "Born to Run (Acoustic)",
+    "artist": "Bruce Springsteen",
+    "date_streamed": "1975-08-25",
+    "stream_count": 15000,
+    "user_id": "13"
+  },
+  {
+    "name": "Superstition (Acoustic)",
+    "artist": "Stevie Wonder",
+    "date_streamed": "1972-10-24",
+    "stream_count": 10000,
+    "user_id": "14"
+  },
+  {
+    "name": "Satisfaction (Acoustic)",
+    "artist": "The Rolling Stones",
+    "date_streamed": "1965-06-06",
+    "stream_count": 5000,
+    "user_id": "15"
+  },
+  {
+    "name": "Imagine (Remix)",
+    "artist": "John Lennon",
+    "date_streamed": "1971-10-11",
+    "stream_count": 4500,
+    "user_id": "2"
+  },
+  {
+    "name": "Hey Jude (Remix)",
+    "artist": "The Beatles",
+    "date_streamed": "1968-08-26",
+    "stream_count": 4000,
+    "user_id": "6"
+  },
+  {
+    "name": "Billie Jean (Remix)",
+    "artist": "Michael Jackson",
+    "date_streamed": "1982-01-02",
+    "stream_count": 3500,
+    "user_id": "3"
+  },
+  {
+    "name": "Smells Like Teen Spirit (Remix)",
+    "artist": "Nirvana",
+    "date_streamed": "1991-09-10",
+    "stream_count": 3000,
+    "user_id": "7"
+  },
+  {
+    "name": "Bohemian Rhapsody (Remix)",
+    "artist": "Queen",
+    "date_streamed": "1975-10-31",
+    "stream_count": 2500,
+    "user_id": "1"
+  },
+  {
+    "name": "Sweet Child o' Mine (Remix)",
+    "artist": "Guns N' Roses",
+    "date_streamed": "1987-08-17",
+    "stream_count": 2000,
+    "user_id": "8"
+  },
+  {
+    "name": "Wonderwall (Remix)",
+    "artist": "Oasis",
+    "date_streamed": "1995-10-30",
+    "stream_count": 1500,
+    "user_id": "10"
+  },
+  {
+    "name": "Back in Black (Remix)",
+    "artist": "AC/DC",
+    "date_streamed": "1980-07-21",
+    "stream_count": 1000,
+    "user_id": "11"
+  },
+  {
+    "name": "Purple Haze (Remix)",
+    "artist": "Jimi Hendrix",
+    "date_streamed": "1967-03-17",
+    "stream_count": 500,
+    "user_id": "12"
+  },
+  {
+    "name": "Born to Run (Remix)",
+    "artist": "Bruce Springsteen",
+    "date_streamed": "1975-08-25",
+    "stream_count": 400,
+    "user_id": "13"
+  },
+  {
+    "name": "Superstition (Remix)",
+    "artist": "Stevie Wonder",
+    "date_streamed": "1972-10-24",
+    "stream_count": 300,
+    "user_id": "14"
+  },
+  {
+    "name": "Satisfaction (Remix)",
+    "artist": "The Rolling Stones",
+    "date_streamed": "1965-06-06",
+    "stream_count": 200,
+    "user_id": "15"
+  },
+  {
+    "name": "Imagine (Orchestral)",
+    "artist": "John Lennon",
+    "date_streamed": "1971-10-11",
+    "stream_count": 150,
+    "user_id": "2"
+  },
+  {
+    "name": "Hey Jude (Orchestral)",
+    "artist": "The Beatles",
+    "date_streamed": "1968-08-26",
+    "stream_count": 100,
+    "user_id": "6"
+  },
+  {
+    "name": "Billie Jean (Orchestral)",
+    "artist": "Michael Jackson",
+    "date_streamed": "1982-01-02",
+    "stream_count": 50000,
+    "user_id": "3"
+  },
+  {
+    "name": "Smells Like Teen Spirit (Orchestral)",
+    "artist": "Nirvana",
+    "date_streamed": "1991-09-10",
+    "stream_count": 45000,
+    "user_id": "7"
+  },
+  {
+    "name": "Bohemian Rhapsody (Orchestral)",
+    "artist": "Queen",
+    "date_streamed": "1975-10-31",
+    "stream_count": 40000,
+    "user_id": "1"
+  },
+  {
+    "name": "Sweet Child o' Mine (Orchestral)",
+    "artist": "Guns N' Roses",
+    "date_streamed": "1987-08-17",
+    "stream_count": 35000,
+    "user_id": "8"
+  },
+  {
+    "name": "Wonderwall (Orchestral)",
+    "artist": "Oasis",
+    "date_streamed": "1995-10-30",
+    "stream_count": 30000,
+    "user_id": "10"
+  },
+  {
+    "name": "Back in Black (Orchestral)",
+    "artist": "AC/DC",
+    "date_streamed": "1980-07-21",
+    "stream_count": 25000,
+    "user_id": "11"
+  },
+  {
+    "name": "Purple Haze (Orchestral)",
+    "artist": "Jimi Hendrix",
+    "date_streamed": "1967-03-17",
+    "stream_count": 20000,
+    "user_id": "12"
+  },
+  {
+    "name": "Born to Run (Orchestral)",
+    "artist": "Bruce Springsteen",
+    "date_streamed": "1975-08-25",
+    "stream_count": 15000,
+    "user_id": "13"
+  },
+  {
+    "name": "Superstition (Orchestral)",
+    "artist": "Stevie Wonder",
+    "date_streamed": "1972-10-24",
+    "stream_count": 10000,
+    "user_id": "14"
+  },
+  {
+    "name": "Satisfaction (Orchestral)",
+    "artist": "The Rolling Stones",
+    "date_streamed": "1965-06-06",
+    "stream_count": 5000,
+    "user_id": "15"
+  }
+]
