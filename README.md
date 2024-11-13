@@ -16,16 +16,15 @@
 - Install the dependencies and start the server.
 
 ```
-npm i
+bun i
 
-npm run dev
+bun dev
 
-npm run start
 ```
 
 ### Tests
 
-- React testing library is not supported on react 19
+- Vitest and react testing library
 
 ### Project Structure
 

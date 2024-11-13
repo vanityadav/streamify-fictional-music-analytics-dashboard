@@ -6,10 +6,11 @@ import tableConfig from "./table.dto";
 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
+import "./table.css";
 
 export default function RecentStreams() {
   return (
-    <div className="ag-theme-quartz-auto-dark h-[590px] w-full">
+    <div className="ag-theme-quartz h-[588px] w-full">
       <AgGridReact {...tableConfig} />
     </div>
   );

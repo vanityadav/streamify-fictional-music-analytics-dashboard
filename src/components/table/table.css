@@ -1,0 +1,20 @@
+.ag-theme-quartz {
+  --ag-font-family: Arial, Helvetica, sans-serif;
+  --ag-font-size: 0.875rem;
+
+  --ag-foreground-color: rgb(63, 63, 70);
+  --ag-header-foreground-color: rgb(63, 63, 70);
+  line-height: 1.25rem;
+}
+
+.ag-header-cell {
+  font-weight: bold;
+}
+
+.ag-filter .ag-filter-apply-panel {
+  gap: 10px;
+}
+
+.ag-filter .ag-filter-apply-panel .ag-button {
+  margin: 0;
+}
