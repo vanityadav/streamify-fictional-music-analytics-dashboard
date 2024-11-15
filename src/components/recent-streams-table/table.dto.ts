@@ -45,7 +45,7 @@ const defaultColDef: ColDef<RecentStreams> = {
 
 const paginationPageSizeSelector = [5, 10, 20, 50, 100];
 
-const tableConfig: AgGridReactProps = {
+export const tableConfig: AgGridReactProps = {
   columnDefs,
   rowData: recentStreams,
   defaultColDef,
@@ -56,5 +56,3 @@ const tableConfig: AgGridReactProps = {
   rowHeight: 48,
   headerHeight: 58,
 };
-
-export default tableConfig;
