@@ -29,7 +29,6 @@ export function RecentStreamsTable() {
     return "ag-theme-quartz-auto-dark";
   };
 
-  console.log("theme", theme);
   return (
     <Card>
       <CardHeader>
