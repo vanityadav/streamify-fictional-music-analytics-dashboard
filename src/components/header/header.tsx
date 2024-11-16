@@ -5,6 +5,7 @@ import { Search } from "lucide-react";
 import { Separator } from "@radix-ui/react-separator";
 
 import { SidebarInput, SidebarTrigger } from "../ui/sidebar";
+import { ModeToggle } from "../theme/theme";
 
 export function Header() {
   return (
@@ -18,6 +19,7 @@ export function Header() {
           <SidebarInput id="search" placeholder="Search..." className="pl-8" />
           <Search className="pointer-events-none absolute left-2 top-1/2 size-4 -translate-y-1/2 select-none opacity-50" />
         </form>
+        <ModeToggle />
       </div>
     </header>
   );

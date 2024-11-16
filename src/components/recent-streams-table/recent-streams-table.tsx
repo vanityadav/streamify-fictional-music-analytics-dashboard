@@ -16,15 +16,27 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useTheme } from "next-themes";
 
 export function RecentStreamsTable() {
+  const { theme } = useTheme();
+
+  const agGridTheme = () => {
+    if (theme === "light") return "ag-theme-quartz";
+
+    if (theme == "dark") return "ag-theme-quartz-dark";
+
+    if (theme == "system") return "ag-theme-quartz-auto-dark";
+  };
+
+  console.log("theme", theme);
   return (
     <Card>
       <CardHeader>
         <CardTitle>Recent Streams</CardTitle>
         <CardDescription>Recent streams of library</CardDescription>
       </CardHeader>
-      <CardContent className="ag-theme-quartz-auto-dark h-[613px] w-full">
+      <CardContent className={agGridTheme() + " h-[613px] w-full"}>
         <AgGridReact {...tableConfig} />
       </CardContent>
     </Card>
