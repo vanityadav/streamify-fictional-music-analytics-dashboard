@@ -24,9 +24,9 @@ export function RecentStreamsTable() {
   const agGridTheme = () => {
     if (theme === "light") return "ag-theme-quartz";
 
-    if (theme == "dark") return "ag-theme-quartz-dark";
+    if (theme === "dark") return "ag-theme-quartz-dark";
 
-    if (theme == "system") return "ag-theme-quartz-auto-dark";
+    return "ag-theme-quartz-auto-dark";
   };
 
   console.log("theme", theme);
