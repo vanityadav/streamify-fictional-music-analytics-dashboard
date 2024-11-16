@@ -114,7 +114,7 @@ export function UserGrowthChart() {
               fill="url(#fillActive)"
               fillOpacity={0.4}
               stroke="var(--color-active)"
-              stackId="a"
+              stackId="b"
             />
             <ChartLegend content={<ChartLegendContent />} />
           </AreaChart>
