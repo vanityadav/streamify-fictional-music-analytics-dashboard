@@ -27,7 +27,10 @@ export function KeyMetrics() {
           <CardTitle className="text-sm font-medium">Total users</CardTitle>
           <Tooltip>
             <TooltipTrigger>
-              <Users className="h-4 w-4 text-muted-foreground" />
+              <Users
+                className="h-4 w-4 text-muted-foreground"
+                aria-label="total users"
+              />
             </TooltipTrigger>
             <TooltipContent>
               <p>Total number of registered users on Streamify</p>
@@ -52,7 +55,10 @@ export function KeyMetrics() {
           <CardTitle className="text-sm font-medium">Active users</CardTitle>
           <Tooltip>
             <TooltipTrigger>
-              <UserCheck className="h-4 w-4 text-muted-foreground" />
+              <UserCheck
+                className="h-4 w-4 text-muted-foreground"
+                aria-label="active users"
+              />
             </TooltipTrigger>
             <TooltipContent>
               <p>Users who streamed at least one song in the last 30 days</p>
@@ -66,6 +72,7 @@ export function KeyMetrics() {
           <Progress
             className="mt-4"
             value={(metrics.activeUsers / metrics.totalUsers) * 100}
+            aria-label="percentage of active users to total users"
           />
           <p className="text-xs text-muted-foreground mt-2">
             {((metrics.activeUsers / metrics.totalUsers) * 100).toFixed(1)}% of
@@ -79,7 +86,10 @@ export function KeyMetrics() {
           <CardTitle className="text-sm font-medium">Total streams</CardTitle>
           <Tooltip>
             <TooltipTrigger>
-              <Play className="h-4 w-4 text-muted-foreground" />
+              <Play
+                className="h-4 w-4 text-muted-foreground"
+                aria-label="total streams"
+              />
             </TooltipTrigger>
             <TooltipContent>
               <p>Total number of song streams on Streamify</p>
