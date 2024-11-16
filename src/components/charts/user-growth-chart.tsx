@@ -48,7 +48,7 @@ const chartConfig = {
 
 export function UserGrowthChart() {
   return (
-    <Card>
+    <Card className="">
       <CardHeader>
         <CardTitle>User growth metrics</CardTitle>
         <CardDescription>
@@ -56,7 +56,7 @@ export function UserGrowthChart() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig}>
+        <ChartContainer config={chartConfig} className="max-h-[500px] w-full">
           <AreaChart
             accessibilityLayer
             data={chartData}

@@ -15,7 +15,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarRail,
 } from "@/components/ui/sidebar";
 
 import { sidebarData } from "./sidebar.dto";
@@ -49,7 +48,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarFooter>
         <Profile user={sidebarData.user} />
       </SidebarFooter>
-      <SidebarRail />
     </Sidebar>
   );
 }

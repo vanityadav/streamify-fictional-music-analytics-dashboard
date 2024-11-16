@@ -5,6 +5,34 @@ import recentStreams from "../../../public/recent-streams.json";
 
 type RecentStreams = (typeof recentStreams)[0];
 
+export const topFiveSongs = recentStreams
+  .sort((a, b) => b.stream_count - a.stream_count)
+  .slice(0, 5)
+  ?.map((song) => ({ ...song, stream_count: song.stream_count / 100000 }));
+
+const artistStreamCount: Record<string, number> = {};
+
+export let mostStreamedArtist = "";
+
+const artistGroups = Object.groupBy(
+  recentStreams,
+  ({ artist, stream_count }) => {
+    const updatedCount = (artistStreamCount[artist] ?? 0) + stream_count;
+    artistStreamCount[artist] = updatedCount;
+
+    if (!mostStreamedArtist) {
+      mostStreamedArtist = artist;
+    }
+
+    if (updatedCount > artistStreamCount[mostStreamedArtist]) {
+      mostStreamedArtist = artist;
+    }
+    return artist;
+  }
+);
+
+export const mostStreamedArtistData = artistGroups[mostStreamedArtist];
+
 const columnDefs: ColDef<RecentStreams>[] = [
   { field: "name", headerName: "Name", filter: "agTextColumnFilter" },
   {
@@ -29,6 +57,7 @@ const columnDefs: ColDef<RecentStreams>[] = [
     field: "stream_count",
     headerName: "Stream Count",
     filter: "agNumberColumnFilter",
+    valueFormatter: ({ value }) => value?.toLocaleString(),
   },
   { field: "user_id", headerName: "User ID", filter: "agTextColumnFilter" },
 ];

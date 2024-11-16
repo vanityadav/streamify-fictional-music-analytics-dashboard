@@ -9,17 +9,16 @@
 - Next.js 15
 - React 19
 - Typescript
-- React Context - State Management
+- Package Manager Bun
 
 ### Installation
 
 - Install the dependencies and start the server.
 
 ```
-bun i
+bun
 
 bun dev
-
 ```
 
 ### Tests
@@ -28,21 +27,19 @@ bun dev
 
 ### Project Structure
 
-| \_dir (/src) | Purpose                             |
-| ------------ | ----------------------------------- |
-| providers    | All App providers can be found here |
-| types        | Types                               |
-| components   | Bla bla                             |
-| ui           | UI components                       |
-| utils        | utils                               |
+| \_dir (/src) | Purpose        |
+| ------------ | -------------- |
+| hooks        | react hooks    |
+| app          | next.js routes |
+| components   | Bla bla        |
+| lib          | utils          |
 
 ### Requirements
 
-    -  Fast, Static, Modern and responsive web app
+    -  Fast, modern and responsive web app
     -  Clean and modular Code
-    -  Mocked dummy data
-    -  Tables and chats with sorting and filtering
-    -  Metrics info
+    -  Interactive tables and chats with sorting and filtering
+    -  Major metrics info
 
 ### Process
 

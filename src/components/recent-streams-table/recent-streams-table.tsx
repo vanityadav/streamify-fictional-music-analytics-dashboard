@@ -24,7 +24,7 @@ export function RecentStreamsTable() {
         <CardTitle>Recent Streams</CardTitle>
         <CardDescription>Recent streams of library</CardDescription>
       </CardHeader>
-      <CardContent className="ag-theme-quartz h-[612px] w-full">
+      <CardContent className="ag-theme-quartz-auto-dark h-[613px] w-full">
         <AgGridReact {...tableConfig} />
       </CardContent>
     </Card>
