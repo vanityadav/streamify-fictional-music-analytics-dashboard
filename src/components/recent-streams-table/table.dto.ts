@@ -14,24 +14,22 @@ const artistStreamCount: Record<string, number> = {};
 
 export let mostStreamedArtist = "";
 
-const artistGroups = Object.groupBy(
-  recentStreams,
-  ({ artist, stream_count }) => {
-    const updatedCount = (artistStreamCount[artist] ?? 0) + stream_count;
-    artistStreamCount[artist] = updatedCount;
+recentStreams.forEach(({ artist, stream_count }) => {
+  const updatedCount = (artistStreamCount[artist] ?? 0) + stream_count;
+  artistStreamCount[artist] = updatedCount;
 
-    if (!mostStreamedArtist) {
-      mostStreamedArtist = artist;
-    }
-
-    if (updatedCount > artistStreamCount[mostStreamedArtist]) {
-      mostStreamedArtist = artist;
-    }
-    return artist;
+  if (!mostStreamedArtist) {
+    mostStreamedArtist = artist;
   }
-);
 
-export const mostStreamedArtistData = artistGroups[mostStreamedArtist];
+  if (updatedCount > artistStreamCount[mostStreamedArtist]) {
+    mostStreamedArtist = artist;
+  }
+});
+
+export const mostStreamedArtistData = recentStreams.filter(
+  ({ artist }) => artist === mostStreamedArtist
+);
 
 const columnDefs: ColDef<RecentStreams>[] = [
   { field: "name", headerName: "Name", filter: "agTextColumnFilter" },
