@@ -4,6 +4,10 @@ import { TrendingUp } from "lucide-react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
 import {
+  userGrowthChartConfig,
+  userGrowthChartData,
+} from "@/components/charts/charts.dto";
+import {
   Card,
   CardContent,
   CardDescription,
@@ -12,39 +16,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
-  ChartConfig,
   ChartContainer,
   ChartLegend,
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-
-const chartData = [
-  { month: "December", total: 73, active: 59 },
-  { month: "January", total: 74, active: 62 },
-  { month: "February", total: 75, active: 68 },
-  { month: "March", total: 79, active: 60 },
-  { month: "April", total: 78, active: 65 },
-  { month: "May", total: 80, active: 73 },
-  { month: "June", total: 83, active: 68 },
-  { month: "July", total: 85, active: 69 },
-  { month: "August", total: 94, active: 68 },
-  { month: "September", total: 98, active: 74 },
-  { month: "October", total: 95, active: 79 },
-  { month: "November", total: 102, active: 81 },
-];
-
-const chartConfig = {
-  total: {
-    label: "Total Users",
-    color: "hsl(var(--chart-1))",
-  },
-  active: {
-    label: "Active Users",
-    color: "hsl(var(--chart-2))",
-  },
-} satisfies ChartConfig;
 
 export function UserGrowthChart() {
   return (
@@ -56,10 +33,13 @@ export function UserGrowthChart() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig} className="max-h-[500px] w-full">
+        <ChartContainer
+          config={userGrowthChartConfig}
+          className="max-h-[500px] w-full"
+        >
           <AreaChart
             accessibilityLayer
-            data={chartData}
+            data={userGrowthChartData}
             margin={{
               left: 12,
               right: 12,

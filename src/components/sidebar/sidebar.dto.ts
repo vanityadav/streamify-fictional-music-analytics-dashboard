@@ -8,94 +8,93 @@ import {
   Users,
 } from "lucide-react";
 
-export const sidebarData = {
-  user: {
-    name: "vanit",
-    email: "vanityadav08@gmail.com",
-    avatar: "/user.png",
+export const mainNav = [
+  {
+    title: "Library",
+    icon: ListMusic,
+    isActive: true,
+    items: [
+      {
+        title: "Trending",
+      },
+      {
+        title: "Pending",
+      },
+      {
+        title: "Approved",
+      },
+    ],
   },
-  navMain: [
-    {
-      title: "Library",
-      icon: ListMusic,
-      isActive: true,
-      items: [
-        {
-          title: "Trending",
-        },
-        {
-          title: "Pending",
-        },
-        {
-          title: "Approved",
-        },
-      ],
-    },
-    {
-      title: "Artists",
-      icon: Guitar,
-      items: [
-        {
-          title: "Top Artists",
-        },
-        {
-          title: "Payments",
-        },
-        {
-          title: "Banned",
-        },
-      ],
-    },
-    {
-      title: "Users",
-      icon: Users,
-      items: [
-        {
-          title: "Top Charts",
-        },
-        {
-          title: "Subscriptions",
-        },
-        {
-          title: "Quota",
-        },
-        {
-          title: "Streams",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-        },
-        {
-          title: "Team",
-        },
-        {
-          title: "Revenue",
-        },
-        {
-          title: "Limits",
-        },
-      ],
-    },
-  ],
+  {
+    title: "Artists",
+    icon: Guitar,
+    items: [
+      {
+        title: "Top Artists",
+      },
+      {
+        title: "Payments",
+      },
+      {
+        title: "Banned",
+      },
+    ],
+  },
+  {
+    title: "Users",
+    icon: Users,
+    items: [
+      {
+        title: "Top Charts",
+      },
+      {
+        title: "Subscriptions",
+      },
+      {
+        title: "Quota",
+      },
+      {
+        title: "Streams",
+      },
+    ],
+  },
+  {
+    title: "Settings",
+    icon: Settings2,
+    items: [
+      {
+        title: "General",
+      },
+      {
+        title: "Team",
+      },
+      {
+        title: "Revenue",
+      },
+      {
+        title: "Limits",
+      },
+    ],
+  },
+];
 
-  revenue: [
-    {
-      name: "Discover",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      icon: PieChart,
-    },
-    {
-      name: "Global Operations",
-      icon: Map,
-    },
-  ],
+export const revenue = [
+  {
+    name: "Discover",
+    icon: Frame,
+  },
+  {
+    name: "Sales & Marketing",
+    icon: PieChart,
+  },
+  {
+    name: "Global Operations",
+    icon: Map,
+  },
+];
+
+export const user = {
+  name: "vanit",
+  email: "vanityadav08@gmail.com",
+  avatar: "/user.png",
 };

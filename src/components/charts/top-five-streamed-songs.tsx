@@ -10,6 +10,12 @@ import {
   YAxis,
 } from "recharts";
 
+import { topStreamedChartConfig } from "@/components/charts/charts.dto";
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
 import {
   Card,
   CardContent,
@@ -18,27 +24,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
-import { topFiveSongs } from "../recent-streams-table/table.dto";
 
-const chartConfig = {
-  name: {
-    label: "Name",
-    color: "hsl(var(--chart-1))",
-  },
-  stream_count: {
-    label: "Stream count",
-    color: "hsl(var(--chart-2))",
-  },
-  label: {
-    color: "hsl(var(--background))",
-  },
-} satisfies ChartConfig;
+import { topFiveSongs } from "../recent-streams-table/table.dto";
 
 export function TopFiveStreamedSongs() {
   return (
@@ -48,7 +35,10 @@ export function TopFiveStreamedSongs() {
         <CardDescription>November 2024</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig} className="max-h-[300px] w-full">
+        <ChartContainer
+          config={topStreamedChartConfig}
+          className="max-h-[300px] w-full"
+        >
           <BarChart
             accessibilityLayer
             data={topFiveSongs}

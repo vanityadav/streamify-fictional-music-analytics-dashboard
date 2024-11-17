@@ -1,12 +1,4 @@
-"use client";
-
-import {
-  Folder,
-  MoreHorizontal,
-  Share,
-  Trash2,
-  type LucideIcon,
-} from "lucide-react";
+import { Folder, MoreHorizontal, Share, Trash2 } from "lucide-react";
 
 import {
   DropdownMenu,
@@ -25,27 +17,21 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 
-export function Revenue({
-  revenue,
-}: {
-  revenue: {
-    name: string;
-    icon: LucideIcon;
-  }[];
-}) {
+import { revenue } from "./sidebar.dto";
+
+export function Revenue() {
   const { isMobile } = useSidebar();
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
       <SidebarGroupLabel>Revenue</SidebarGroupLabel>
+
       <SidebarMenu>
         {revenue.map((item) => (
           <SidebarMenuItem key={item.name}>
-            <SidebarMenuButton asChild>
-              <div>
-                <item.icon />
-                <span>{item.name}</span>
-              </div>
+            <SidebarMenuButton>
+              <item.icon />
+              <span>{item.name}</span>
             </SidebarMenuButton>
 
             <DropdownMenu>
@@ -55,6 +41,7 @@ export function Revenue({
                   <span className="sr-only">More</span>
                 </SidebarMenuAction>
               </DropdownMenuTrigger>
+
               <DropdownMenuContent
                 className="w-48"
                 side={isMobile ? "bottom" : "right"}
@@ -64,11 +51,14 @@ export function Revenue({
                   <Folder className="text-muted-foreground" />
                   <span>View Report</span>
                 </DropdownMenuItem>
+
                 <DropdownMenuItem>
                   <Share className="text-muted-foreground" />
                   <span>Share Report</span>
                 </DropdownMenuItem>
+
                 <DropdownMenuSeparator />
+
                 <DropdownMenuItem>
                   <Trash2 className="text-muted-foreground" />
                   <span>Delete Report</span>
@@ -77,6 +67,7 @@ export function Revenue({
             </DropdownMenu>
           </SidebarMenuItem>
         ))}
+
         <SidebarMenuItem>
           <SidebarMenuButton>
             <MoreHorizontal />

@@ -15,7 +15,7 @@ import {
 import {
   mostStreamedArtist,
   mostStreamedArtistData,
-} from "../recent-streams-table/table.dto";
+} from "@/components/recent-streams-table/table.dto";
 
 export function TopArtist() {
   return (

@@ -1,6 +1,4 @@
-"use client";
-
-import { ChevronRight, type LucideIcon } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 import {
   Collapsible,
@@ -19,30 +17,20 @@ import {
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
 
-export function Platform({
-  items,
-}: {
-  items: {
-    title: string;
-    icon: LucideIcon;
-    isActive?: boolean;
-    items?: {
-      title: string;
-    }[];
-  }[];
-}) {
+import { mainNav } from "./sidebar.dto";
+
+export function Platform() {
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Platform</SidebarGroupLabel>
+
       <SidebarMenu>
-        {items.map((item) => (
+        {mainNav.map((item) => (
           <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip={item.title}>
-                <div>
-                  <item.icon />
-                  <span>{item.title}</span>
-                </div>
+              <SidebarMenuButton tooltip={item.title}>
+                <item.icon />
+                <span>{item.title}</span>
               </SidebarMenuButton>
               {item.items?.length ? (
                 <>
@@ -52,14 +40,13 @@ export function Platform({
                       <span className="sr-only">Toggle</span>
                     </SidebarMenuAction>
                   </CollapsibleTrigger>
+
                   <CollapsibleContent>
                     <SidebarMenuSub>
                       {item.items?.map((subItem) => (
                         <SidebarMenuSubItem key={subItem.title}>
-                          <SidebarMenuSubButton asChild>
-                            <div>
-                              <span>{subItem.title}</span>
-                            </div>
+                          <SidebarMenuSubButton>
+                            <span>{subItem.title}</span>
                           </SidebarMenuSubButton>
                         </SidebarMenuSubItem>
                       ))}

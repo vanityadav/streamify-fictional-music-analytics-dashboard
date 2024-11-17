@@ -1,13 +1,7 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import { AgGridReact } from "ag-grid-react";
-
-import { tableConfig } from "./table.dto";
-
-import "ag-grid-community/styles/ag-grid.css";
-import "ag-grid-community/styles/ag-theme-quartz.css";
-
-import "./table.css";
 
 import {
   Card,
@@ -16,7 +10,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useTheme } from "next-themes";
+
+import { tableConfig } from "./table.dto";
+
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-quartz.css";
+
+import "./table.css";
 
 export function RecentStreamsTable() {
   const { theme } = useTheme();

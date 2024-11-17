@@ -1,17 +1,20 @@
 "use client";
 
-import * as React from "react";
+import { useMemo } from "react";
 
 import { TrendingUp } from "lucide-react";
 import { Label, Pie, PieChart, Sector } from "recharts";
 
 import { PieSectorDataItem } from "recharts/types/polar/Pie";
 import {
-  ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
+import {
+  revenueDistribution,
+  revenueDistributionChartConfig,
+} from "@/components/charts/charts.dto";
 import {
   Card,
   CardContent,
@@ -21,38 +24,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const chartData = [
-  { source: "subscriptions", revenue: 23, fill: "var(--color-subscriptions)" },
-  { source: "ads", revenue: 14, fill: "var(--color-ads)" },
-  { source: "sponsors", revenue: 7, fill: "var(--color-sponsors)" },
-  { source: "others", revenue: 3, fill: "var(--color-others)" },
-];
-
-const chartConfig = {
-  revenue: {
-    label: "Revenue",
-  },
-  ads: {
-    label: "Ads",
-    color: "hsl(var(--chart-1))",
-  },
-  subscriptions: {
-    label: "Subscriptions",
-    color: "hsl(var(--chart-2))",
-  },
-  sponsors: {
-    label: "Sponsors",
-    color: "hsl(var(--chart-3))",
-  },
-  others: {
-    label: "Others",
-    color: "hsl(var(--chart-4))",
-  },
-} satisfies ChartConfig;
-
 export function RevenueDistribution() {
-  const totalRevenue = React.useMemo(() => {
-    return chartData.reduce((acc, curr) => acc + curr.revenue, 0);
+  const totalRevenue = useMemo(() => {
+    return revenueDistribution.reduce((acc, curr) => acc + curr.revenue, 0);
   }, []);
 
   return (
@@ -63,13 +37,13 @@ export function RevenueDistribution() {
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer
-          config={chartConfig}
+          config={revenueDistributionChartConfig}
           className="mx-auto aspect-square max-h-[250px]"
         >
           <PieChart>
             <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
             <Pie
-              data={chartData}
+              data={revenueDistribution}
               dataKey="revenue"
               nameKey="source"
               innerRadius={60}

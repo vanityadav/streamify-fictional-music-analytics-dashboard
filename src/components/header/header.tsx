@@ -1,11 +1,8 @@
-import React from "react";
-
 import { Search } from "lucide-react";
 
 import { Separator } from "@radix-ui/react-separator";
-
-import { SidebarInput, SidebarTrigger } from "../ui/sidebar";
-import { ModeToggle } from "../theme/theme";
+import { ModeToggle } from "@/components/theme/theme";
+import { SidebarInput, SidebarTrigger } from "@/components/ui/sidebar";
 
 export function Header() {
   return (
