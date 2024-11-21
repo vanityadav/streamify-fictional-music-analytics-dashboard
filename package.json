@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -19,6 +19,7 @@
     "@radix-ui/react-tooltip": "^1.1.4",
     "@tailwindcss/container-queries": "^0.1.1",
     "ag-grid-community": "^32.3.3",
+    "ag-grid-enterprise": "^32.3.3",
     "ag-grid-react": "^32.3.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

@@ -82,4 +82,5 @@ export const tableConfig: AgGridReactProps = {
   domLayout: "normal",
   rowHeight: 48,
   headerHeight: 58,
+  sideBar: true,
 };

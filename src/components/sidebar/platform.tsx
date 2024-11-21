@@ -1,5 +1,7 @@
 import { ChevronRight } from "lucide-react";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Collapsible,
   CollapsibleContent,
@@ -20,13 +22,19 @@ import {
 import { mainNav } from "./sidebar.dto";
 
 export function Platform() {
+  const pathname = usePathname();
+
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Platform</SidebarGroupLabel>
 
       <SidebarMenu>
         {mainNav.map((item) => (
-          <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
+          <Collapsible
+            key={item.title}
+            asChild
+            defaultOpen={pathname.startsWith("/" + item.title.toLowerCase())}
+          >
             <SidebarMenuItem>
               <SidebarMenuButton tooltip={item.title}>
                 <item.icon />
@@ -46,7 +54,16 @@ export function Platform() {
                       {item.items?.map((subItem) => (
                         <SidebarMenuSubItem key={subItem.title}>
                           <SidebarMenuSubButton asChild>
-                            <span>{subItem.title}</span>
+                            <Link
+                              href={subItem.href}
+                              className={
+                                subItem.href === pathname
+                                  ? "bg-sidebar-accent font-semibold text-sidebar-accent-foreground"
+                                  : ""
+                              }
+                            >
+                              {subItem.title}
+                            </Link>
                           </SidebarMenuSubButton>
                         </SidebarMenuSubItem>
                       ))}

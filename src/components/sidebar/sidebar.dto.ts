@@ -12,16 +12,18 @@ export const mainNav = [
   {
     title: "Library",
     icon: ListMusic,
-    isActive: true,
     items: [
       {
         title: "Trending",
+        href: "/library/trending",
       },
       {
         title: "Pending",
+        href: "/library/pending",
       },
       {
         title: "Approved",
+        href: "/library/approved",
       },
     ],
   },
@@ -31,12 +33,15 @@ export const mainNav = [
     items: [
       {
         title: "Top Artists",
+        href: "/artists/top-artists",
       },
       {
         title: "Payments",
+        href: "/artists/payments",
       },
       {
         title: "Banned",
+        href: "/artists/banned",
       },
     ],
   },
@@ -46,15 +51,19 @@ export const mainNav = [
     items: [
       {
         title: "Top Charts",
+        href: "/users/top-charts",
       },
       {
         title: "Subscriptions",
+        href: "/users/subscriptions",
       },
       {
         title: "Quota",
+        href: "/users/quota",
       },
       {
         title: "Streams",
+        href: "/users/streams",
       },
     ],
   },
@@ -64,15 +73,19 @@ export const mainNav = [
     items: [
       {
         title: "General",
+        href: "/settings/general",
       },
       {
         title: "Team",
+        href: "/settings/team",
       },
       {
         title: "Revenue",
+        href: "/settings/revenue",
       },
       {
         title: "Limits",
+        href: "/settings/limits",
       },
     ],
   },
