@@ -46,10 +46,12 @@ export function UserGrowthChart() {
 
     const newChartsData = userGrowthChartData.filter((data) => {
       const dataDate = new Date(data.year, data.month);
+
       const fromDate = new Date(
         date.from!.getFullYear(),
         date.from!.getMonth()
       );
+
       const toDate = new Date(date.to!.getFullYear(), date.to!.getMonth());
 
       return dataDate >= fromDate && dataDate <= toDate;
