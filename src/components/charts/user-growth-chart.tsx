@@ -84,17 +84,6 @@ export function UserGrowthChart() {
 
         <div className="flex">
           <button
-            data-active={activeChart === ""}
-            className="flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
-            onClick={reset}
-          >
-            <span className="flex item-center gap-2 justify-center text-xs text-muted-foreground">
-              Reset chart
-              <RefreshCcw className="h-4 w-4" />
-            </span>
-          </button>
-
-          <button
             data-active={activeChart === "total"}
             className="flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
             onClick={() => setActiveChart("total")}
@@ -117,6 +106,17 @@ export function UserGrowthChart() {
               {chartsData
                 .reduce((acc, data) => acc + data.active, 0)
                 ?.toLocaleString()}
+            </span>
+          </button>
+
+          <button
+            data-active={activeChart === ""}
+            className="flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
+            onClick={reset}
+          >
+            <span className="flex item-center gap-2 justify-center text-xs text-muted-foreground">
+              Reset chart
+              <RefreshCcw className="h-4 w-4" />
             </span>
           </button>
         </div>
