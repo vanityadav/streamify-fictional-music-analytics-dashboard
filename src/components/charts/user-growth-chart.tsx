@@ -3,11 +3,12 @@
 import { useState } from "react";
 
 import { addDays } from "date-fns";
-import { TrendingUp } from "lucide-react";
+import { RefreshCcw, TrendingUp } from "lucide-react";
 import { DateRange } from "react-day-picker";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
 import {
+  defaultDate,
   months,
   userGrowthChartConfig,
   userGrowthChartData,
@@ -32,16 +33,12 @@ import { DateRangeSelector } from "./date-range-selector";
 
 export function UserGrowthChart() {
   const [chartsData, setChartsData] = useState(userGrowthChartData);
+
   const [activeChart, setActiveChart] = useState<"total" | "active" | "">("");
 
-  const [date, setDate] = useState<DateRange | undefined>({
-    from: new Date(),
-    to: addDays(new Date(), 30),
-  });
+  const [date, setDate] = useState<DateRange | undefined>(defaultDate);
 
   const handleSetDate = (date: DateRange) => {
-    console.log(date.to!.getMonth(), date.from?.getMonth());
-
     if (!date) return;
 
     const newChartsData = userGrowthChartData.filter((data) => {
@@ -61,14 +58,21 @@ export function UserGrowthChart() {
 
     setChartsData(newChartsData);
   };
+
+  const reset = () => {
+    setDate(defaultDate);
+    setChartsData(userGrowthChartData);
+    setActiveChart("");
+  };
+
   return (
-    <Card className="">
+    <Card>
       <CardHeader>
         <CardTitle>User growth metrics</CardTitle>
         <CardDescription>
           Showing total and active users for the last 12 months
         </CardDescription>
-        <div className="ml-auto">
+        <div className="ml-auto pb-8">
           <DateRangeSelector
             date={date}
             setDate={
@@ -83,13 +87,11 @@ export function UserGrowthChart() {
           <button
             data-active={activeChart === ""}
             className="flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
-            onClick={() => setActiveChart("")}
+            onClick={reset}
           >
-            <span className="text-xs text-muted-foreground">All Users</span>
-            <span className="text-lg font-bold leading-none sm:text-3xl">
-              {chartsData
-                .reduce((acc, data) => acc + data.active + data.total, 0)
-                ?.toLocaleString()}
+            <span className="flex item-center gap-2 justify-center text-xs text-muted-foreground">
+              Reset chart
+              <RefreshCcw className="h-4 w-4" />
             </span>
           </button>
 

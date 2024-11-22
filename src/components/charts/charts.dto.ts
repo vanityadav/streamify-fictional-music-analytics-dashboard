@@ -59,6 +59,14 @@ export const userGrowthChartData = [
   { year: 2024, month: 10, total: 102, active: 81 },
 ];
 
+export const defaultDate = {
+  from: new Date(userGrowthChartData[0].year, userGrowthChartData[0].month),
+  to: new Date(
+    userGrowthChartData[userGrowthChartData.length - 1].year,
+    userGrowthChartData[userGrowthChartData.length - 1].month
+  ),
+};
+
 export const userGrowthChartConfig = {
   total: {
     label: "Total Users",
