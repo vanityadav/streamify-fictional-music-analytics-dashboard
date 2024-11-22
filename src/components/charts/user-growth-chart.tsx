@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
+
 import { TrendingUp } from "lucide-react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
 import {
+  months,
   userGrowthChartConfig,
   userGrowthChartData,
 } from "@/components/charts/charts.dto";
@@ -23,7 +26,37 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
+import { DateRangeSelector } from "./date-range-selector";
+import { DateRange } from "react-day-picker";
+import { addDays } from "date-fns";
+
 export function UserGrowthChart() {
+  const [chartsData, setChartsData] = useState(userGrowthChartData);
+  const [activeChart, setActiveChart] = useState<"total" | "active" | "">("");
+
+  const [date, setDate] = useState<DateRange | undefined>({
+    from: new Date(),
+    to: addDays(new Date(), 30),
+  });
+
+  const handleSetDate = (date: DateRange) => {
+    console.log(date.to!.getMonth());
+    if (!date) return;
+
+    const newChartsData = userGrowthChartData.filter(
+      (data) =>
+        data.year >= date.to!.getFullYear() &&
+        data.month >= date.to!.getMonth() &&
+        data.year <= date.from!.getFullYear() &&
+        data.month <= date.from!.getMonth()
+    );
+
+    console.log(newChartsData);
+
+    setDate(date);
+
+    setChartsData(newChartsData);
+  };
   return (
     <Card className="">
       <CardHeader>
@@ -31,88 +64,145 @@ export function UserGrowthChart() {
         <CardDescription>
           Showing total and active users for the last 12 months
         </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <ChartContainer
-          config={userGrowthChartConfig}
-          className="max-h-[500px] w-full"
-        >
-          <AreaChart
-            accessibilityLayer
-            data={userGrowthChartData}
-            margin={{
-              left: 12,
-              right: 12,
-            }}
+        <div className="ml-auto">
+          <DateRangeSelector date={date} setDate={handleSetDate} />
+        </div>
+
+        <div className="flex">
+          <button
+            data-active={activeChart === "total"}
+            className="flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
+            onClick={() => setActiveChart("total")}
           >
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="month"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              tickFormatter={(value) => value.slice(0, 3)}
-            />
-            <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-            <defs>
-              <linearGradient id="fillTotal" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="5%"
-                  stopColor="var(--color-total)"
-                  stopOpacity={0.8}
-                />
-                <stop
-                  offset="95%"
-                  stopColor="var(--color-total)"
-                  stopOpacity={0.1}
-                />
-              </linearGradient>
-              <linearGradient id="fillActive" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="5%"
-                  stopColor="var(--color-active)"
-                  stopOpacity={0.8}
-                />
-                <stop
-                  offset="95%"
-                  stopColor="var(--color-active)"
-                  stopOpacity={0.1}
-                />
-              </linearGradient>
-            </defs>
-            <Area
-              dataKey="total"
-              type="natural"
-              fill="url(#fillTotal)"
-              fillOpacity={0.4}
-              stroke="var(--color-total)"
-              stackId="a"
-            />
-            <Area
-              dataKey="active"
-              type="natural"
-              fill="url(#fillActive)"
-              fillOpacity={0.4}
-              stroke="var(--color-active)"
-              stackId="b"
-            />
-            <ChartLegend content={<ChartLegendContent />} />
-          </AreaChart>
-        </ChartContainer>
-      </CardContent>
-      <CardFooter>
-        <div className="flex w-full items-start gap-2 text-sm">
-          <div className="grid gap-2">
-            <div className="flex items-center gap-2 font-medium leading-none">
-              Active user up by 2.8% this month{" "}
-              <TrendingUp className="h-4 w-4" />
-            </div>
-            <div className="flex items-center gap-2 leading-none text-muted-foreground">
-              December 2023 - November 2024
+            <span className="text-xs text-muted-foreground">Total Users</span>
+            <span className="text-lg font-bold leading-none sm:text-3xl">
+              {chartsData
+                .reduce((acc, data) => acc + data.total, 0)
+                ?.toLocaleString()}
+            </span>
+          </button>
+
+          <button
+            data-active={activeChart === "active"}
+            className="flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
+            onClick={() => setActiveChart("active")}
+          >
+            <span className="text-xs text-muted-foreground">Active Users</span>
+            <span className="text-lg font-bold leading-none sm:text-3xl">
+              {chartsData
+                .reduce((acc, data) => acc + data.active, 0)
+                ?.toLocaleString()}
+            </span>
+          </button>
+
+          <button
+            data-active={activeChart === ""}
+            className="flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
+            onClick={() => setActiveChart("")}
+          >
+            <span className="text-xs text-muted-foreground">All Users</span>
+            <span className="text-lg font-bold leading-none sm:text-3xl">
+              {chartsData
+                .reduce((acc, data) => acc + data.active + data.total, 0)
+                ?.toLocaleString()}
+            </span>
+          </button>
+        </div>
+      </CardHeader>
+
+      {chartsData.length === 0 && (
+        <CardContent>
+          <div className="flex items-center justify-center h-64">
+            <div className="text-muted-foreground">No data available</div>
+          </div>
+        </CardContent>
+      )}
+      {chartsData.length > 0 && (
+        <CardContent>
+          <ChartContainer
+            config={userGrowthChartConfig}
+            className="max-h-[500px] w-full"
+          >
+            <AreaChart
+              accessibilityLayer
+              data={chartsData}
+              margin={{
+                left: 12,
+                right: 12,
+              }}
+            >
+              <CartesianGrid vertical={false} />
+              <XAxis
+                dataKey="month"
+                tickLine={false}
+                axisLine={false}
+                tickMargin={8}
+                tickFormatter={(value) => months[value].slice(0, 3)}
+              />
+              <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+              <defs>
+                <linearGradient id="fillTotal" x1="0" y1="0" x2="0" y2="1">
+                  <stop
+                    offset="5%"
+                    stopColor="var(--color-total)"
+                    stopOpacity={0.8}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor="var(--color-total)"
+                    stopOpacity={0.1}
+                  />
+                </linearGradient>
+                <linearGradient id="fillActive" x1="0" y1="0" x2="0" y2="1">
+                  <stop
+                    offset="5%"
+                    stopColor="var(--color-active)"
+                    stopOpacity={0.8}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor="var(--color-active)"
+                    stopOpacity={0.1}
+                  />
+                </linearGradient>
+              </defs>
+
+              <Area
+                dataKey="total"
+                type="natural"
+                fill="url(#fillTotal)"
+                fillOpacity={0.4}
+                stroke="var(--color-total)"
+                stackId="a"
+                hide={activeChart ? activeChart !== "total" : false}
+              />
+              <Area
+                dataKey="active"
+                type="natural"
+                fill="url(#fillActive)"
+                fillOpacity={0.4}
+                stroke="var(--color-active)"
+                stackId="b"
+                hide={activeChart ? activeChart !== "active" : false}
+              />
+              <ChartLegend content={<ChartLegendContent />} />
+            </AreaChart>
+          </ChartContainer>
+        </CardContent>
+      )}
+
+      {chartsData.length > 0 && (
+        <CardFooter>
+          <div className="flex w-full items-start gap-2 text-sm">
+            <div className="grid gap-2">
+              <div className="flex items-center gap-2 font-medium leading-none">
+                Active user up by 2.8% this month{" "}
+                <TrendingUp className="h-4 w-4" />
+              </div>
             </div>
           </div>
-        </div>
-      </CardFooter>
+        </CardFooter>
+      )}
     </Card>
   );
 }

@@ -29,19 +29,34 @@ export const revenueDistributionChartConfig = {
   },
 } satisfies ChartConfig;
 
+export const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 export const userGrowthChartData = [
-  { month: "December", total: 73, active: 59 },
-  { month: "January", total: 74, active: 62 },
-  { month: "February", total: 75, active: 68 },
-  { month: "March", total: 79, active: 60 },
-  { month: "April", total: 78, active: 65 },
-  { month: "May", total: 80, active: 73 },
-  { month: "June", total: 83, active: 68 },
-  { month: "July", total: 85, active: 69 },
-  { month: "August", total: 94, active: 68 },
-  { month: "September", total: 98, active: 74 },
-  { month: "October", total: 95, active: 79 },
-  { month: "November", total: 102, active: 81 },
+  { year: 2023, month: 11, total: 73, active: 59 },
+  { year: 2024, month: 0, total: 74, active: 62 },
+  { year: 2024, month: 1, total: 75, active: 68 },
+  { year: 2024, month: 2, total: 79, active: 60 },
+  { year: 2024, month: 3, total: 78, active: 65 },
+  { year: 2024, month: 4, total: 80, active: 73 },
+  { year: 2024, month: 5, total: 83, active: 68 },
+  { year: 2024, month: 6, total: 85, active: 69 },
+  { year: 2024, month: 7, total: 94, active: 68 },
+  { year: 2024, month: 8, total: 98, active: 74 },
+  { year: 2024, month: 9, total: 95, active: 79 },
+  { year: 2024, month: 10, total: 102, active: 81 },
 ];
 
 export const userGrowthChartConfig = {
