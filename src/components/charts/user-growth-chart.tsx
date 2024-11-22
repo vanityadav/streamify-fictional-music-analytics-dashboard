@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-import { addDays } from "date-fns";
 import { RefreshCcw, TrendingUp } from "lucide-react";
 import { DateRange } from "react-day-picker";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
